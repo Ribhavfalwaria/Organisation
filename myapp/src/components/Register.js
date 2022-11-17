@@ -13,7 +13,6 @@ function Register() {
     const [country, setcountry] = useState("");
     const [State, setState] = useState("");
     const [password, setPassword] = useState("");
-    const [formvalues, setformvalues] = useState({email:"",password:""})
     const navigate=useNavigate()
     function PostData() {
         const requestOptions = {
@@ -34,14 +33,13 @@ function Register() {
         
     }
     // const navigate = useNavigate();
-    const handleSignin =()=>{
-      console.log(formvalues);
+    const handleSignin =async()=>{
+      console.log(email,password);
       try {
-        const {email,password}= formvalues;
        PostData()
-        createUserWithEmailAndPassword(firebaseAuth,email,password)
+        await createUserWithEmailAndPassword(firebaseAuth,email,password)
         onAuthStateChanged(firebaseAuth,(currentUser)=>{
-              if(currentUser){navigate("/login")}
+              if(currentUser){navigate("/")}
             })
       } catch (err) {
         console.log(err);

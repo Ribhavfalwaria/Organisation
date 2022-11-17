@@ -48,7 +48,7 @@ function Login() {
                         <br />
                         <button type="button" className="btn text-white" style={{ background: '#4e48e3', height: '36px', textAlign: 'center', alignItems: 'center' }} onClick={handleLogin}>Login</button>
                         <br/>
-                        <button type="button" className="btn text-white" style={{ background: '#4e48e3', height: '36px', textAlign: 'center', alignItems: 'center' }} >Register</button>
+                        <button type="button" className="btn text-white" style={{ background: '#4e48e3', height: '36px', textAlign: 'center', alignItems: 'center' }} onClick={()=>{navigate("/register")}}>Register</button>
                     </form>
                
 
