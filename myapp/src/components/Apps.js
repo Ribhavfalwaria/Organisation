@@ -58,9 +58,9 @@ function Apps(props) {
                   
                 }}>Add App</button>
             </div>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex '>
                   {obj.apps.map((app)=>{
-                  return <div class="card"  style={{width: "18rem"}}>
+                  return <div className="card mx-2"  style={{width: "18rem"}}>
                   <div className="card-body">
                     <h5 className="card-title">{app.name}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{app.description}</h6>
@@ -98,7 +98,7 @@ function Apps(props) {
                         <br />
                         <div className=' form-group d-flex flex-row'>
                             <input type="checkbox" className="form-check-input d-inline" id="exampleCheck1" />
-                            <label class="form-check-label" for="exampleCheck1">I have read and agreed with <a href='#'>Terms and Conditions</a></label>
+                            <label class="form-check-label" for="exampleCheck1">I have read and agreed with <a href='/#'>Terms and Conditions</a></label>
                         </div> <br />
                         <button type="button" className="btn text-white" style={{ background: '#4e48e3', height: '36px', textAlign: 'center', alignItems: 'center' }} onClick={()=>{set(data)}}>Add Your App</button>
                     </form>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import { HiOutlineArrowLeft } from 'react-icons/hi'
 
@@ -11,8 +11,6 @@ function Organisation(props) {
     const [description, setdescription] = useState('')
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [apidata, setapidata] = useState([]);
-    console.log("Organisation ",props.data.organisations);
    
     
 
@@ -28,7 +26,7 @@ function Organisation(props) {
                 }
             ],
             name: name,
-            date: new Date()
+            date: JSON.stringify(new Date())
         })
         console.log("checking a",a.organisations);
         const requestOptions = {
@@ -42,19 +40,7 @@ function Organisation(props) {
         
       }
 
-    
-
-    function handleclick(obj) {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(obj)
-        };
-        console.log(JSON.stringify(obj));
-        fetch('http://localhost:1234/create', requestOptions)
-            .then(response => response.json())
-            .then(data => { console.log("Posted data", data) });
-    }
+   
     return (
         <div>
             <div className="d-flex justify-content-between">
@@ -122,7 +108,7 @@ function Organisation(props) {
                         <br />
                         <div className=' form-group d-flex flex-row'>
                             <input type="checkbox" className="form-check-input d-inline" id="exampleCheck1" />
-                            <label className="form-check-label" for="exampleCheck1">I have read and agreed with <a href='#'>Terms and Conditions</a></label>
+                            <label className="form-check-label" for="exampleCheck1">I have read and agreed with <a href='/#'>Terms and Conditions</a></label>
                         </div> <br />
                         <button type="button" className="btn text-white" style={{ background: '#4e48e3', height: '36px', textAlign: 'center', alignItems: 'center' }} onClick={check}>Create Organisation</button>
                     </form>
